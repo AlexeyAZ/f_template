@@ -1,0 +1,24 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "helpers";
+@import "typography";
+@import "font-awesome/font-awesome";
+
+@import "app";
+
+@import "blocks/container";
+@import "blocks/sec";
+@import "blocks/btn";
+@import "blocks/form";
+@import "blocks/phone";
+@import "blocks/thanks";
+
+@import "components/header";
+@import "components/footer";
+@import "components/sec1";
+@import "components/sec2";
+@import "components/sec3";
+@import "components/sec4";
+
+@import "sprite";

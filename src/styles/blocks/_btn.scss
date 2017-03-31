@@ -1,0 +1,62 @@
+button {
+    white-space: nowrap;
+
+    &.btn-round {
+        border: none;
+        outline: none;
+    }
+}
+
+a {
+
+    &.btn-round {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+.btn-round {
+    background-color: $main-red;
+    border-radius: 40px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-family: "PFHandBookPro", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+    padding: 0 35px;
+    height: 80px;
+
+    @include media (w1024) {
+        border-radius: 32px;
+        font-size: 30px;
+        height: 64px;
+    }
+
+    @include media (w768) {
+        border-radius: 25px;
+        font-size: 25px;
+        padding: 0 10px;
+        height: 50px;
+    }
+
+    &_cream {
+        background-color: #f6ddaa;
+        color: black;
+    }
+
+    &_download {
+        background-image: url("../img/icon-download.svg");
+        background-position: right 35px center;
+        background-repeat: no-repeat;
+        background-size: 50px;
+        padding-right: 100px;
+
+        @include media (w768) {
+            background-position: right 10px center;
+            background-size: 30px;
+            padding-right: 50px;
+        }
+    }
+}
