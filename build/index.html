@@ -60,7 +60,12 @@
       </div>
     </div>
     <section class="sec sec1">
-      <header class="header"></header>
+      <header class="header">
+        <div class="container header__container">
+          <div class="header__item"><a class="header__logo" href="/"><img class="header__logo-img" src="img/header-logo.png" alt=""></a></div>
+          <div class="header__item header__item_contacts"><a class="header__link phone phone_white" href="tel:88006005030" data-phone="88006005030">8 800 600 50 30</a><a class="header__link link link_getcall js-small-btn" href="">Заказать звонок</a></div>
+        </div>
+      </header>
       <div class="container"></div>
     </section>
     <section class="sec sec2">
@@ -70,7 +75,22 @@
       <div class="container"></div>
     </section>
     <section class="sec sec4">
-      <div class="container"></div>
+      <div class="container">
+        <div class="bottom-form-container" id="bottomFormContainer">
+          <form class="bottom-form" data-next="#bigForm" id="bottomForm">
+            <label class="bottom-form__label">
+              <input class="input input_city" type="text" name="city" placeholder="Ваш город" required>
+            </label>
+            <label class="bottom-form__label">
+              <input class="input input_phone" type="text" name="phone" placeholder="Телефон" required>
+            </label>
+            <label class="bottom-form__label">
+              <input class="input" type="email" name="email" placeholder="E-mail" required>
+            </label>
+            <button class="btn-round">Проверить</button>
+          </form>
+        </div>
+      </div>
     </section>
     <footer class="footer">
       <div class="container footer__container">
@@ -90,5 +110,6 @@
     </footer>
     <script src="scripts/vendor.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js"></script>
   </body>
 </html>

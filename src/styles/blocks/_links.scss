@@ -1,0 +1,22 @@
+a {
+    display: inline-block;
+    transition: $trans;
+}
+
+.link {
+    text-decoration: none;
+
+    &_getcall {
+        border-bottom: 2px dotted currentColor;
+        color: white;
+        font-size: 25px;
+
+        @include media(w1024) {
+            font-size: 15px;
+        }
+
+        @include media(w768) {
+            font-size: 10px;
+        }
+    }
+}

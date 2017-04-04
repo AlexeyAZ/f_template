@@ -21,29 +21,36 @@ a {
     display: inline-block;
     cursor: pointer;
     color: white;
-    font-family: "PFHandBookPro", sans-serif;
-    font-size: 36px;
+    font-size: 27px;
     text-align: center;
     text-decoration: none;
     padding: 0 35px;
     height: 80px;
 
+    &:hover {
+        animation: btnAnimRed 0.8s 0s ease-out 1;
+    }
+
     @include media (w1024) {
         border-radius: 32px;
-        font-size: 30px;
+        font-size: 20px;
         height: 64px;
     }
 
     @include media (w768) {
         border-radius: 25px;
-        font-size: 25px;
-        padding: 0 10px;
+        font-size: 13px;
+        padding: 0 20px;
         height: 50px;
     }
 
-    &_cream {
-        background-color: #f6ddaa;
+    &_white {
+        background-color: white;
         color: black;
+
+        &:hover {
+            animation: btnAnimWhite 0.8s 0s ease-out 1;
+        }
     }
 
     &_download {
@@ -52,11 +59,64 @@ a {
         background-repeat: no-repeat;
         background-size: 50px;
         padding-right: 100px;
+        position: relative;
+
+        &:after {
+            content: "PDF, 20Mb";
+            font-size: 30px;
+            position: absolute;
+            left: calc(100% + 20px);
+            white-space: nowrap;
+
+            @include media (w1024) {
+                font-size: 18px;
+            }
+
+            @include media (w768) {
+                content: none;
+            }
+        }
 
         @include media (w768) {
             background-position: right 10px center;
             background-size: 30px;
             padding-right: 50px;
         }
+    }
+
+    &_download-column {
+        margin-bottom: 50px;
+
+        &:after {
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: calc(100% + 10px);
+        }
+    }
+
+    &_clear {
+        
+        &:after {
+            content: none;
+        }
+    }
+}
+
+@keyframes btnAnimRed {
+    from {
+        box-shadow: 0 0 8px 6px $main-red, 0 0 12px 14px $main-red;
+    }
+    to {
+        box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 71px rgba(255, 48, 26, 0);
+    }
+}
+
+@keyframes btnAnimWhite {
+    from {
+        box-shadow: 0 0 8px 6px white, 0 0 12px 14px white;
+    }
+    to {
+        box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 71px rgba(255, 48, 26, 0);
     }
 }

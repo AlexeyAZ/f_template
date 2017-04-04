@@ -6,6 +6,15 @@
     text-decoration: none;
     padding-left: 28px;
 
+    @include media(w1024) {
+        background-size: contain;
+        font-size: 18px;
+    }
+
+    @include media(w768) {
+        font-size: 15px;
+    }
+
     &_white {
         background-image: url("../img/icon-call-white.png");
     }

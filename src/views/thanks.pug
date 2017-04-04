@@ -5,18 +5,16 @@ block vars
 
 block content
     section.sec.thanks
-        include templates/header
+        include components/header
         div.container
             p.thanks__heading.
-                <span id="thanksName"></span><span id="thanksOur">наши</span> менеджеры уже занимаются вашей заявкой
-            div.decor-line.thanks__decor-line
+                <span id="thanksName"></span>наши</span> менеджеры уже занимаются вашей заявкой
             p.thanks__title.
                 Мы свяжемся с Вами в ближайшее время
             div.thanks__links
                 a(href="doc/mk.pdf" target="_blank").btn-round.btn-round_download.
                     Открыть презентацию
-                a(href="/").thanks__links-link.
+                a(href="/index.html").thanks__links-link.
                     Вернуться на сайт
             p.thanks__subtitle.
                 График работы с 9.00 до 23.00 Поэтому, если вы оставили заявку в нерабочее время, мы перезвоним вам на следующий рабочий день
-        div.sec1__decor-line1

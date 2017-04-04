@@ -2349,8 +2349,8 @@ html {
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  position: relative;
   line-height: 1.2;
+  position: relative;
   min-width: 320px; }
 
 .container {
@@ -2360,6 +2360,16 @@ body {
   padding-right: 30px;
   position: relative;
   max-width: 1180px; }
+  @media only screen and (max-width: 1024px) {
+    .container {
+      padding-left: 18px;
+      padding-right: 18px; } }
+
+.sec {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
 
 button {
   white-space: nowrap; }
@@ -2379,37 +2389,145 @@ a.btn-round {
   display: inline-block;
   cursor: pointer;
   color: white;
-  font-family: "PFHandBookPro", sans-serif;
-  font-size: 36px;
+  font-size: 27px;
   text-align: center;
   text-decoration: none;
   padding: 0 35px;
   height: 80px; }
+  .btn-round:hover {
+    animation: btnAnimRed 0.8s 0s ease-out 1; }
   @media only screen and (max-width: 1024px) {
     .btn-round {
       border-radius: 32px;
-      font-size: 30px;
+      font-size: 20px;
       height: 64px; } }
   @media only screen and (max-width: 768px) {
     .btn-round {
       border-radius: 25px;
-      font-size: 25px;
-      padding: 0 10px;
+      font-size: 13px;
+      padding: 0 20px;
       height: 50px; } }
-  .btn-round_cream {
-    background-color: #f6ddaa;
+  .btn-round_white {
+    background-color: white;
     color: black; }
+    .btn-round_white:hover {
+      animation: btnAnimWhite 0.8s 0s ease-out 1; }
   .btn-round_download {
     background-image: url("../img/icon-download.svg");
     background-position: right 35px center;
     background-repeat: no-repeat;
     background-size: 50px;
-    padding-right: 100px; }
+    padding-right: 100px;
+    position: relative; }
+    .btn-round_download:after {
+      content: "PDF, 20Mb";
+      font-size: 30px;
+      position: absolute;
+      left: calc(100% + 20px);
+      white-space: nowrap; }
+      @media only screen and (max-width: 1024px) {
+        .btn-round_download:after {
+          font-size: 18px; } }
+      @media only screen and (max-width: 768px) {
+        .btn-round_download:after {
+          content: none; } }
     @media only screen and (max-width: 768px) {
       .btn-round_download {
         background-position: right 10px center;
         background-size: 30px;
         padding-right: 50px; } }
+  .btn-round_download-column {
+    margin-bottom: 50px; }
+    .btn-round_download-column:after {
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 10px); }
+  .btn-round_clear:after {
+    content: none; }
+
+@keyframes btnAnimRed {
+  from {
+    box-shadow: 0 0 8px 6px #ff2727, 0 0 12px 14px #ff2727; }
+  to {
+    box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 71px rgba(255, 48, 26, 0); } }
+
+@keyframes btnAnimWhite {
+  from {
+    box-shadow: 0 0 8px 6px white, 0 0 12px 14px white; }
+  to {
+    box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 71px rgba(255, 48, 26, 0); } }
+
+.input {
+  background-color: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  border: 2px solid white;
+  outline: none;
+  display: inline-block;
+  color: white;
+  font-family: "SegoeUI", sans-serif;
+  font-weight: 300;
+  font-size: 34px;
+  padding: 0 35px;
+  height: 80px;
+  width: 100%; }
+  .input::-webkit-input-placeholder {
+    color: white; }
+  .input:-moz-placeholder {
+    color: white; }
+  .input::-moz-placeholder {
+    color: white; }
+  .input:-ms-input-placeholder {
+    color: white; }
+  @media only screen and (max-width: 1280px) {
+    .input {
+      font-size: 26px; } }
+  @media only screen and (max-width: 1024px) {
+    .input {
+      border-radius: 32px;
+      padding: 0 25px;
+      font-size: 20px;
+      height: 64px; } }
+  @media only screen and (max-width: 768px) {
+    .input {
+      border-radius: 25px;
+      font-size: 25px;
+      padding: 0 10px;
+      height: 50px; } }
+  .input_city {
+    background-image: url("../img/input-map.png");
+    background-position: 20px center;
+    padding-left: 60px; }
+  .input_phone {
+    background-image: url("../img/input-phone.png");
+    background-position: 20px center;
+    padding-left: 55px; }
+
+.select {
+  background-color: white;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  border: 2px solid #d7d7d7;
+  outline: none;
+  display: inline-block;
+  color: #6b6b6b;
+  font-family: "PFHandBookPro", sans-serif;
+  font-size: 36px;
+  padding: 0 35px;
+  height: 80px; }
+  @media only screen and (max-width: 1024px) {
+    .select {
+      border-radius: 32px;
+      font-size: 30px;
+      height: 64px; } }
+  @media only screen and (max-width: 768px) {
+    .select {
+      border-radius: 25px;
+      font-size: 25px;
+      padding: 0 10px;
+      height: 50px; } }
 
 .form-wrap {
   transition: 0.5s ease;
@@ -2424,24 +2542,29 @@ a.btn-round {
   height: 100%;
   width: 100%;
   min-width: 320px;
-  z-index: -100; }
+  z-index: 100; }
   .form-wrap_open {
     opacity: 1;
-    visibility: visible;
-    z-index: 100; }
+    visibility: visible; }
+    .form-wrap_open .form-container {
+      opacity: 1; }
 
 .form-open {
   overflow: hidden; }
+  .form-open body {
+    overflow-y: scroll; }
 
 .form-container {
   background-color: white;
   display: inline-block;
   text-align: left;
+  opacity: 0;
   margin-top: 50px;
   margin-bottom: 30px;
   padding: 50px 50px 60px;
   position: relative;
-  width: 430px; }
+  width: 430px;
+  z-index: 100; }
   @media only screen and (max-width: 768px) {
     .form-container {
       padding: 20px 20px 30px;
@@ -2549,8 +2672,85 @@ a.btn-round {
   font-size: 30px;
   text-decoration: none;
   padding-left: 28px; }
+  @media only screen and (max-width: 1024px) {
+    .phone {
+      background-size: contain;
+      font-size: 18px; } }
+  @media only screen and (max-width: 768px) {
+    .phone {
+      font-size: 15px; } }
   .phone_white {
     background-image: url("../img/icon-call-white.png"); }
+
+a {
+  display: inline-block;
+  transition: all 0.3s ease; }
+
+.link {
+  text-decoration: none; }
+  .link_getcall {
+    border-bottom: 2px dotted currentColor;
+    color: white;
+    font-size: 25px; }
+    @media only screen and (max-width: 1024px) {
+      .link_getcall {
+        font-size: 15px; } }
+    @media only screen and (max-width: 768px) {
+      .link_getcall {
+        font-size: 10px; } }
+
+.bottom-form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-bottom: 80px;
+  padding-bottom: 50px; }
+  @media only screen and (max-width: 768px) {
+    .bottom-form {
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: center;
+          align-items: center;
+      margin-bottom: 50px;
+      padding-bottom: 30px; } }
+  .bottom-form__label {
+    display: block;
+    margin: 0 0.5% 20px;
+    width: 32%; }
+    @media only screen and (max-width: 768px) {
+      .bottom-form__label {
+        width: 90%; } }
+    @media only screen and (max-width: 500px) {
+      .bottom-form__label {
+        width: 100%; } }
+
+.header {
+  margin-bottom: 30px; }
+  .header__container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 100%; }
+  .header__logo-img {
+    width: 140px; }
+    @media only screen and (max-width: 768px) {
+      .header__logo-img {
+        width: 80px; } }
+  .header__item_contacts {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .header__link {
+    color: white; }
 
 .footer {
   background-color: #2b2a28;
