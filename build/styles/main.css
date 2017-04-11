@@ -2404,7 +2404,7 @@ a.btn-round {
   @media only screen and (max-width: 768px) {
     .btn-round {
       border-radius: 25px;
-      font-size: 13px;
+      font-size: 15px;
       padding: 0 20px;
       height: 50px; } }
   .btn-round_white {
@@ -2494,7 +2494,7 @@ a.btn-round {
     .input {
       border-radius: 25px;
       font-size: 25px;
-      padding: 0 10px;
+      padding: 0 20px;
       height: 50px; } }
   .input_city {
     background-image: url("../img/input-map.png");
@@ -2526,7 +2526,7 @@ a.btn-round {
     .select {
       border-radius: 25px;
       font-size: 25px;
-      padding: 0 10px;
+      padding: 0 20px;
       height: 50px; } }
 
 .form-wrap {
@@ -2699,6 +2699,69 @@ a {
       .link_getcall {
         font-size: 10px; } }
 
+.thanks {
+  background-image: url("../img/sec1-bg.jpg");
+  padding-top: 30px;
+  padding-bottom: 160px; }
+  @media only screen and (max-width: 1024px) {
+    .thanks {
+      padding-bottom: 200px; } }
+  .thanks__heading {
+    border-bottom: 2px solid white;
+    font-family: 'Qanelas', sans-serif;
+    font-weight: 800;
+    font-size: 75px;
+    padding-bottom: 0.4em; }
+    @media only screen and (max-width: 1024px) {
+      .thanks__heading {
+        font-size: 50px; } }
+    @media only screen and (max-width: 768px) {
+      .thanks__heading {
+        font-size: 40px; } }
+  .thanks__title {
+    font-size: 58px;
+    margin-bottom: 1em; }
+    @media only screen and (max-width: 1024px) {
+      .thanks__title {
+        font-size: 40px; } }
+    @media only screen and (max-width: 768px) {
+      .thanks__title {
+        font-size: 30px; } }
+  .thanks__subtitle {
+    font-size: 38px;
+    margin-bottom: 1em; }
+    @media only screen and (max-width: 1024px) {
+      .thanks__subtitle {
+        font-size: 30px; } }
+    @media only screen and (max-width: 768px) {
+      .thanks__subtitle {
+        font-size: 20px; } }
+  .thanks__buttons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin: 0 auto 30px;
+    width: 100%; }
+    @media only screen and (max-width: 768px) {
+      .thanks__buttons {
+        -ms-flex-direction: column;
+            flex-direction: column; } }
+  .thanks__buttons-link {
+    color: white;
+    font-size: 30px;
+    margin-left: 60px; }
+    @media only screen and (max-width: 768px) {
+      .thanks__buttons-link {
+        font-size: 20px;
+        margin-left: 0;
+        margin-top: 20px; } }
+  .thanks__btn {
+    -ms-flex-pack: center;
+        justify-content: center; }
+
 .bottom-form {
   display: -ms-flexbox;
   display: flex;
@@ -2726,6 +2789,12 @@ a {
     @media only screen and (max-width: 500px) {
       .bottom-form__label {
         width: 100%; } }
+  @media only screen and (max-width: 768px) {
+    .bottom-form__btn {
+      width: 90%; } }
+  @media only screen and (max-width: 500px) {
+    .bottom-form__btn {
+      width: 100%; } }
 
 .header {
   margin-bottom: 30px; }
@@ -2850,8 +2919,8 @@ a {
   height: 1em;
   fill: currentColor; }
 
-.icon-icon-mouse {
-  font-size: 4.48rem;
-  width: 0.64732em; }
+.icon-icon-download {
+  font-size: 3.07rem;
+  width: 1.04235em; }
 
 /*# sourceMappingURL=main.css.map */

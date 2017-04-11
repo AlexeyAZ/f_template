@@ -19,6 +19,7 @@ var plugins = {
 
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
+    bs = require("browser-sync").create(),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
@@ -37,15 +38,28 @@ function onError(err) {
     this.emit('end');
 }
 
+gulp.task('browserSync', function() {
+  bs.init({
+    server: {
+      baseDir: "./build"
+    },
+    //port: 8080,
+    open: true,
+    notify: false,
+    https: true
+  });
+});
+
 gulp.task('scripts', function() {
     return gulp.src([properties.folders.src + '/scripts/app.js'])
-      .pipe(sourcemaps.init())
-      .pipe(rigger())
-      .pipe(babel())
-      .on('error', onError)
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(properties.folders.build + '/scripts'))
-      .pipe(connect.reload());
+        .pipe(sourcemaps.init())
+        .pipe(rigger())
+        .pipe(babel())
+        .on('error', onError)
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(properties.folders.build + '/scripts'))
+        .pipe(bs.stream());
+        //.pipe(connect.reload());
 });
 
 gulp.task('vendor', function () {
@@ -66,7 +80,8 @@ gulp.task('pug', function() {
     .pipe(gulp.dest(properties.folders.build))
     .on('end', function(){
         gulp.src(properties.folders.build + '/**/*.html')
-            .pipe(connect.reload());
+            .pipe(bs.stream({once: true}));
+            //.pipe(connect.reload());
     });
 });
 
@@ -77,7 +92,8 @@ gulp.task('sass', function () {
 		.pipe(prefix("last 3 version", "> 1%", "ie 8", "ie 7"))
     .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(properties.folders.build + '/styles'))
-		.pipe(connect.reload());
+        .pipe(bs.stream());
+		//.pipe(connect.reload());
 });
 
 gulp.task('image', function () {
@@ -201,4 +217,4 @@ gulp.task('watch', function() {
     });
 });
 
-gulp.task('default', ['build', 'server', 'watch']);
+gulp.task('default', ['build', 'browserSync', 'watch']);
