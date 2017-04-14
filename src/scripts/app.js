@@ -1,5 +1,11 @@
 $(function() {
 
+    if ($('input[type="range"]').length) {
+        $('input[type="range"]').rangeslider({
+            polyfill: false,
+        });
+    }
+
     webshim.setOptions('forms', {
         lazyCustomMessages: true,
         replaceValidationUI: true
