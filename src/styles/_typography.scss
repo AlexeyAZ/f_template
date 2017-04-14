@@ -1,0 +1,39 @@
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 0.5em;
+}
+
+.text {
+
+    &_xs {
+        font-size: 20px;
+
+        @include media(w1024) {
+            
+        }
+    }
+
+    &_s {
+        font-size: 25px;
+    }
+
+    &_m {
+        font-size: 30px;
+    }
+    
+    &_l {
+        font-size: 35px;
+    }
+    
+    &_xl {
+        font-size: 40px;
+    }
+    
+    &_xxl {
+        font-size: 47px;
+    }
+
+    
+    &_x {
+        font-size: 60px;
+    }
+}
