@@ -49,9 +49,11 @@ $(function() {
     body.on("click", function(e) {
         var self = $(e.target);
         
-        if (self.hasClass("form-wrap") || self.hasClass("form__close")){
+        if (self.hasClass("form-wrap_small") || self.hasClass("form__close")){
             $("html").removeClass("form-open");
             $(".form-wrap").removeClass("form-wrap_open");
+        } else if(self.hasClass("form-wrap_big")) {
+            location = "thanks.html";
         }
     });
 
