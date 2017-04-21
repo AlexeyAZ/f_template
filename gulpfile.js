@@ -32,7 +32,8 @@ var gulp = require('gulp'),
     svgSprite = require('gulp-svg-sprite'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
-    replace = require('gulp-replace');
+    replace = require('gulp-replace'),
+    typograf = require('gulp-typograf');
 
 function onError(err) {
     console.log(err);
@@ -81,6 +82,8 @@ gulp.task('pug', function() {
     .pipe(gulp.dest(properties.folders.build))
     .on('end', function(){
         gulp.src(properties.folders.build + '/**/*.html')
+            .pipe(typograf({ locale: ['ru', 'en-US'] }))
+            .pipe(gulp.dest(properties.folders.build))
             .pipe(bs.stream({once: true}));
             //.pipe(connect.reload());
     });
