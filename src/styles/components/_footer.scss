@@ -13,117 +13,165 @@
         justify-content: space-between;
         align-items: flex-start;
 
-        @include media(w600) {
+        @include media(w1024) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__block {
+        display: flex;
+
+        &_social {
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            
+            @include media(w1024) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                order: 3;
+                margin-top: 30px;
+                width: 100%;
+            }
+
+            @include media(w768) {
+                flex-direction: column;
+                margin-top: 0;
+            }
+        }
+
+        &_contacts {
+            flex-direction: column;
+
+            @include media(w1024) {
+                order: 1;
+            }
+
+            @include media(w768) {
+                align-items: center;
+                order: 2;
+            }
+        }
+
+        &_feedback {
+            flex-direction: column;
+            align-items: flex-end;
+
+            @include media(w1024) {
+                order: 2;
+            }
+
+            @include media(w768) {
+                align-items: center;
+                order: 1;
+            }
+        }
+
+        @include media(w768) {
+            margin-bottom: 10px;
+            width: 100%;
         }
     }
 
     &__text {
+        margin-bottom: 0;
+        line-height: 1.8;
 
         &_copy {
 
-            @include media(w600) {
-                margin-bottom: 15px;
-            }
         }
 
-    }
-    
-    &__block {
-        display: flex;
-
-        &_contacts {
-            align-items: center;
-            
-            @include media(w1024) {
-                align-items: flex-end;
-            }
-
-            @include media(w600) {
-                align-items: center;
-            }
+        &_social-title {
+            margin-right: 10px;
         }
 
-        @include media(w1024) {
-            flex-direction: column;
-        }
-    }
-
-    &__link {
-        transition: $trans;
-        color: $footer-text;
-        text-decoration: none;
-
-        &:hover {
-            color: white;
-        }
-
-        &_politic {
-            margin-right: 30px;
+        &_adress {
+            text-align: center;
 
             @include media(w1024) {
-                margin-right: 0;
-                margin-bottom: 20px;
+                text-align: left;
             }
 
-            @include media(w600) {
-                margin-bottom: 15px;
-            }
-        }
-
-        &_getcall {
-            border-bottom: 1px dotted currentColor;
-            font-size: 17px;
-            padding-top: 5px;
-            padding-bottom: 4px;
-
-            @include media(w1024) {
-                display: inline-block;
+            @include media(w768) {
+                text-align: center;
             }
         }
     }
 
     &__social {
-
-        @include media(w768) {
-            margin-bottom: 15px;
-        }
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
     }
 
-    &__social-title {
-        margin-bottom: 4px;
+    &__social-list {
+        display: flex;
     }
 
     &__social-item {
-        display: inline-block;
-        font-size: 18px;
+        background-color: #9a9a9a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
         margin-right: 4px;
+        height: 24px;
+        width: 24px;
     }
-
-    &__phone {
-        background-image: url("../img/footer-icon-phone.png");
-        background-position: left center;
-        background-repeat: no-repeat;
-        font-size: 26px;
-        margin-right: 30px;
-        padding-left: 30px;
+    
+    &__link {
         transition: $trans;
+        border-bottom: 1px solid transparent;
+        cursor: pointer;
         color: $footer-text;
         text-decoration: none;
 
         &:hover {
+            border-color: currentColor;
+        }
+
+        &_social {
+            border: none;
             color: white;
         }
 
-        @include media(w1024) {
-            font-size: 26px;
-            margin-right: 0;
+        &_politic {
+            border-bottom: 1px solid currentColor;
+            margin-left: 30px;
+
+            @include media(w1024) {
+                margin-left: 10px;
+            }
+
+            @include media(w768) {
+                margin-right: 0;
+            }
         }
 
-        @include media(w600) {
-            //padding-left: 0;
+        &_getcall {
+            border-bottom: 1px dotted currentColor;
+            font-size: 18px;
         }
+    }
+
+    &__contacts {
+        display: flex;
+
+        @include media(w768) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            order: -10;
+        }
+    }
+
+    &__phone {
+        font-size: 30px;
+        transition: $trans;
+        color: $footer-text;
+        line-height: 1;
+        text-decoration: none;
     }
 }

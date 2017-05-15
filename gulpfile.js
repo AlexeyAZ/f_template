@@ -12,6 +12,7 @@ var plugins = {
         'bower_components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js',
         'bower_components/mobile-detect/mobile-detect.min.js',
         'bower_components/rangeslider.js/dist/rangeslider.min.js',
+        'bower_components/webshim/js-webshim/minified/polyfiller.js',
     ],
     css: [
         'bower_components/reset-css/reset.css','bower_components/rangeslider.js/dist/rangeslider.css',
@@ -71,6 +72,8 @@ gulp.task('vendor', function () {
     gulp.src(plugins.js)
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest(properties.folders.build + '/scripts/'));
+    gulp.src(['bower_components/webshim/js-webshim/minified/shims/**/*'])
+        .pipe(gulp.dest(properties.folders.build + '/scripts/shims'))
 });
 
 gulp.task('pug', function() {
@@ -85,7 +88,6 @@ gulp.task('pug', function() {
             .pipe(typograf({ locale: ['ru', 'en-US'] }))
             .pipe(gulp.dest(properties.folders.build))
             .pipe(bs.stream({once: true}));
-            //.pipe(connect.reload());
     });
 });
 
@@ -97,7 +99,6 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(properties.folders.build + '/styles'))
         .pipe(bs.stream());
-		//.pipe(connect.reload());
 });
 
 gulp.task('image', function () {
